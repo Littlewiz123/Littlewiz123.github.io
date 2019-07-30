@@ -1,0 +1,160 @@
+body {
+	margin: 0;
+}
+.header {
+	background-color: black;
+	text-align: center;
+	color: white;
+}
+
+.title{
+	margin-top: 10px !important;
+	display: inline-flex;
+	line-height: 37px;
+}
+
+.title h1 {
+	margin: 0;
+}
+
+.fa-camera:before {
+    line-height: 37px;
+    margin-right: 10px;
+}
+.nav-bar {
+	border-top: solid 1px #413c37;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.nav-bar ul {
+	display: table;
+	margin: auto;
+	padding: 0;
+}
+
+.nav-bar ul li {
+	list-style-type: none;
+	margin: 10px 10px;
+	float: left;
+}
+
+.nav-bar ul li a {
+	text-decoration: none;
+	color: white;
+}
+
+.search {
+	color: white;
+}
+
+.active {
+	/*box-sizing: border-box;*/
+	color: #e56c69 !important;
+}
+
+/* Content */
+
+.content {
+	padding: 0 50px;
+	background-color: #eeeeee;
+	height: 100%;
+}
+
+.content h1 {
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.nav-link {
+	display: table;
+	margin: auto;
+}
+
+.nav-link a {
+	text-decoration: none;
+	color: grey;
+}
+
+.nav-link a, .nav-link .fa-arrow-right {
+	margin: 0 5px;
+}
+
+.link-active {
+	color: #e60202 !important;
+}
+
+.grid-img {
+	margin: 20px 0;
+}
+
+.grid-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.img-box {
+	width: 100%;
+	background-color: #eeeeee;
+	text-align: center;
+}
+
+.img-box:hover {
+	background-color: white;
+}
+
+.img-box a img {
+	box-sizing: border-box;
+	padding: 5px 5px;
+	max-width: 100%;
+}
+
+.img-box a img:hover {
+	opacity: 0.5;
+}
+
+.img-box a {
+	text-decoration: none;
+}
+
+.img-box a h2 {
+	margin: 10px 10px;
+	color: black;
+}
+
+.img-box p {
+	margin-top: 0;
+	margin-bottom: 15px;
+	color: grey;
+}
+
+.img-box a h2:hover {
+	color: red;
+}
+
+/* Footer */
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid black;
+	padding: 0 50px;
+	background-color: #eeeeee;
+}
+
+.company-info p {
+	font-weight: bold;
+}
+
+.footer-link ul {
+	display: flex;
+}
+.footer-link ul li { 
+	list-style-type: none;
+	margin: 0 10px;
+}
+.footer-link ul li a {
+	text-decoration: none;
+	color: black
+}

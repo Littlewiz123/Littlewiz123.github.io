@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+}
+h1, h2 {
+	text-align: center;
+}
+span {
+	padding-left: 20px;
+}
+
+.bth-3 {
+	display: grid;
+	grid-template-columns: auto auto auto;
+
+}
+
+.bth-3 .red {
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: red;
+	height: 400px;
+}
+
+.bth-3 .green {
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: green;
+	height: 400px;
+}
+
+.bth-3 .blue {
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: blue;
+	height: 400px;
+}
+
+/* Bài thực hành 4 */
+
+.bth-4 {
+	display: flex;
+	flex-direction: row;
+}
+
+.bth-4 .red-1 {
+	margin-right: 7.5px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: red;
+	height: 400px;
+}
+
+.bth-4 .green-1 {
+	margin: 0 7.5px 0 7.5px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: green;
+	height: 400px;
+}
+
+.bth-4 .blue-1 {
+	margin-left: 7.5px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	background-color: blue;
+	height: 400px;
+}
