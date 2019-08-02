@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+}
+
+.container {
+	display: table;
+	margin: 50px auto;
+}
+
+.container img {
+	width: 100%;
+	animation: heart 1.8s ease infinite;
+}
+
+@keyframes heart {
+	25% {
+		transform: scale(1.2);
+	}
+
+	50% {
+		transform: scale(1.5);
+	}
+}

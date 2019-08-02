@@ -1,0 +1,116 @@
+body {
+	margin: 0;
+}
+
+.container {
+	display: table;
+	margin: 50px auto;
+}
+
+.container p {
+	text-align: center;
+	width: 200px;
+	margin: 5px;
+	text-transform: uppercase;
+	color: grey;
+	font-size: 30px;
+}
+
+.up-top {
+	position: absolute;
+	z-index: 1;
+	top: 13px;
+}
+
+.animation {
+	transform: translate(0px, -37px);
+    opacity: 0;
+    animation: moving 8s ease-out infinite;
+    /*transition: animation 1s ease-out;*/
+}
+
+.animation:before {
+	width: 200px;
+	content: 'coding';
+	color: white !important;
+	background-color: orange;
+	padding-top: 5px;
+	animation: character 8s ease-out infinite;
+	/*transition: animation 1s ease-out;*/
+}
+
+@keyframes moving {
+
+	25% {
+		transform: translate(0px, 0px);
+    	opacity: 1;
+	}
+
+	50% {
+		transform: translate(0px, -20px);
+		transform: scale(0.8);
+		opacity: 0;
+	}
+
+	75% {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes character {
+	0% {
+		content: "coding";
+		background-color: "orange" !important;
+	}
+
+	25% {
+		background-color: "orange";
+	}
+
+	50% {
+		content: "teaching";
+		background-color: blue;
+	}
+
+	75% {
+		/*transition-duration: 2s;*/
+		content: "learning";
+		background-color: red;
+	}
+
+	/*100% {
+		content: "coding";
+		background-color: orange;
+		display: none;
+	}*/
+}
+
+.builder {
+	position: fixed;
+	bottom: 20px;
+	right: 80px;
+	color: black;
+	animation: builder 5s linear infinite;
+}
+
+@keyframes builder {
+	0% {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+}
