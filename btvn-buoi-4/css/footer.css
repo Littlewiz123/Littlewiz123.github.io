@@ -75,3 +75,7 @@ body {
 .fa-2x:before {
 	font-size: 2rem;
 }
+
+img {
+	margin-top: 20px;
+}
