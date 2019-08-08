@@ -15,7 +15,7 @@ body {
 }
 
 .img-box {
-	background-color: #eeeeee;
+	background-color: white;
 	overflow: hidden;
 	box-sizing: border-box;
 	/*width: calc(100% / 3 - 10px);*/
