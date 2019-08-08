@@ -18,10 +18,10 @@ body {
 	background-color: #eeeeee;
 	overflow: hidden;
 	box-sizing: border-box;
-	width: calc(100% / 3 - 10px);
+	/*width: calc(100% / 3 - 10px);*/
+	transition: transform 0.3s linear;
 	padding: 10px;
 	border: 2px solid grey;
-	transition: transform .5s ease;
 }
 
 .img-box:first-child {
@@ -32,13 +32,14 @@ body {
 }
 
 .img-box:hover {
-	/*transition: width 1s linear;*/
-	/*position: absolute;
-	z-index: 99;*/
-	/*width: 40%;*/
 	transform: scale(1.2);
 }
 
 .img-box img {
 	max-width: 100%;
+	transition: transform 0.3s linear;
+}
+
+.img-box img:hover {
+	/*transform: scale(1.2);*/
 }
