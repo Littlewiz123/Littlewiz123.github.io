@@ -1,0 +1,132 @@
+body {
+	margin: 0;
+}
+
+.content {
+	width: 100%;
+	background-color: orange;
+}
+
+.banner {
+	font-family: Roboto-Regular,'Helvetica Neue',Helvetica,Tahoma,Arial,Sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 27px;
+	background-color: yellow;
+	width: 1188px;
+	margin: 0 auto;
+	max-height: 344px;
+	height: 344px;
+}
+
+.side-menu {
+	width: 200px;
+	height: 100%;
+	background-color: #ffffff;
+}
+
+.side-menu .lv1 {
+	margin: 0;
+	list-style-type: none;
+	padding: 8px 0 12px 0;
+}
+
+.side-menu .lv1 li {
+	position: relative;
+}
+
+.side-menu .lv1 li a { 
+	text-decoration: none;
+	box-sizing: content-box;
+}
+
+.side-menu .lv1 li a span {
+	box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	height: 27px;
+	line-height: 27px;
+	padding-left: 8px;
+	color: #757575;
+	text-decoration: none;
+}
+
+.side-menu .lv1 li:hover {
+	cursor: pointer;
+	background: #eceff1;
+}
+
+.side-menu .lv1 li >a:hover span {
+	color: #f36d00;
+}
+
+/* Menu Level 2 */
+
+.side-menu .lv1 li:hover > .lv2 {
+	visibility: visible;
+}
+
+.lv2 {
+	z-index: 99;
+	box-sizing: border-box;
+	padding: 8px 0 12px 0;
+    height: 344px;
+    visibility: hidden;
+    position: absolute;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    left: 200px;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+}
+
+.lv2-1 { top: -8px; }
+.lv2-2 { top: -35px; }
+.lv2-3 { top: -62px; }
+.lv2-4 { top: -89px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+.lv2-1 { top: -8px; }
+
+/* Menu Level 3 */
+
+.lv2 li:hover > .lv3  {
+	visibility: visible;
+}
+
+.lv3 li:hover {
+	background: unset !important;
+}
+
+.lv3 {
+	z-index: 99;
+	box-sizing: border-box;
+	padding: 8px 0 12px;
+    height: 344px;
+    visibility: hidden;
+    position: absolute;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    left: 200px;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+}
+
+.lv3-1 { top: -62px; }
+.lv3-2 { top: -89px; }
+.lv3-3 { top: -8px; }
+.lv3-4 { top: -8px; }
+.lv3-5 { top: -8px; }
+.lv3-6 { top: -8px; }
+.lv3-7 { top: -8px; }
+.lv3-8 { top: -8px; }
+
+
