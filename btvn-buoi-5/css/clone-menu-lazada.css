@@ -62,6 +62,19 @@ body {
 	color: #f36d00;
 }
 
+.side-menu .lv1 li a span .fa-chevron-right {
+	position: absolute;
+    line-height: 27px;
+    right: 4px;
+    visibility: hidden;
+}
+
+.side-menu .lv1 li >a:hover span .fa-chevron-right {
+	visibility: visible;
+}
+
+
+
 /* Menu Level 2 */
 
 .side-menu .lv1 li:hover > .lv2 {

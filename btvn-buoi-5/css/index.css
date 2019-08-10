@@ -117,10 +117,13 @@ body {
 }
 
 .sub-menu-col ul li a {
+	box-sizing: border-box;
+	width: 100%;
 	text-transform: none;
 	border: none;
 	line-height: normal;
 	margin: 0;
+	text-align: left;
 	font-weight: unset;
 	font-size: 14px;
     color: #32323d;
@@ -135,6 +138,7 @@ body {
 }
 
 .sub-menu-col ul li:hover {
+	cursor: pointer;
 	color: #6e55b4;
     background-color: #efefef;
     border: none;
