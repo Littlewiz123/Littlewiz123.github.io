@@ -25,6 +25,16 @@ body {
 	display: inline-block; 
 }
 
+.menu > h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+.active {
+	box-sizing: border-box;
+	border-bottom: 2px solid white;
+}
+
 .nav-bar {
 	display: inline-block;
 }
