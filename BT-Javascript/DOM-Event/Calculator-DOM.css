@@ -36,7 +36,13 @@ body {
 }
 
 .container .row .number {
-	color: purple;
+	background-color: #e0ba74;
+}
+
+.container .output {
+	margin: 10px;
+    box-sizing: border-box;
+    border: 3px solid darkgray;
 }
 
 #output1, #output2 {
@@ -46,5 +52,9 @@ body {
 	text-align: right;
 	padding: 10px;
 	background-color: white;
-	border: 10px solid #ffbd64;
 }
+
+.container .output #output1 {
+	font-size: 18px;
+	color: #aca9a9;
+} 

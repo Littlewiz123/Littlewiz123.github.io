@@ -8,8 +8,10 @@
 <body>
 	<div class="container">
 		<h1>Calculator</h1>
-		<p id="output1">0</p>
-		<p id="output2">0</p>
+		<div class="output">
+			<p id="output1">0</p>
+			<p id="output2">0</p>
+		</div>
 		<div class="row">
 			<button onclick="percent()" class="button" id="percent">%</button>
 			<button onclick="radic()" class="button" id="radic">&#8730;</button>
@@ -19,7 +21,7 @@
 		<div class="row">
 			<button onclick="clearEntry()" class="button" id="clearEntry">CE</button>
 			<button onclick="clearAll()" class="button" id="clear">C</button>
-			<button onclick="clearEntryOneChar()" class="button" id="clearEntryOneChar">&lArr;</button>
+			<button onclick="clearEntryOneChar()" class="button" id="clearEntryOneChar">&#10502;</button>
 			<button onclick="divide()" class="button" id="divide">&#247;</button>
 		</div>
 		<div class="row">
@@ -42,12 +44,13 @@
 		</div>
 		<div class="row">
 			<button onclick="plusmn()" class="button" id="plusmn">&#177;</button>
-			<button onclick="addNumber(this)" class="button number" id="zero">0</button>
+			<button onclick="addZero(this)" class="button number" id="zero">0</button>
 			<button onclick="addComma()" class="button" id="comma">&#44;</button>
 			<button onclick="equal()" class="button" id="equal">=</button>
 		</div>
 	</div>
 
+	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="Calculator-DOM.js"></script>
 </body>
 </html>

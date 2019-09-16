@@ -1,194 +1,250 @@
+const output1 = $('#output1');
+const output2 = $('#output2');
+
 function clearEntry() {
-	let output2 = document.getElementById("output2").innerText;
-	if (output2 != 0) {
-		document.getElementById("output2").innerText = 0;
+	if (output2[0].innerHTML != 0) {
+		output2.html(0);
 	}
 	else {
-		document.getElementById("output2").innerText = 0;
+		output2.html(0);
 	} 
 }
 
 function clearAll() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 != 0 && output2 != 0) {
-		document.getElementById("output1").innerText = 0;
-		document.getElementById("output2").innerText = 0;
+	if (output1[0].innerHTML != 0 && output2[0].innerHTML != 0) {
+		output1.html(0);
+		output2.html(0);
 	}
 	else {
-		document.getElementById("output1").innerText = 0;
-		document.getElementById("output2").innerText = 0;
+		output1.html(0);
+		output2.html(0);
 	} 
 }
 
 function clearEntryOneChar() {
-	let output2 = document.getElementById("output2").innerText;
-	if (output2.length > 0) {
-		let slice = output2.slice(0,output2.length-1);
-		document.getElementById("output2").innerText = slice;
-	}
-	if (output2.length == 1) {
-		document.getElementById("output2").innerText = 0;
+	if (output2[0].innerHTML.length == 1 && output2[0].innerHTML == 0) {
+		output2.html(0);
+	} 
+	else if (output2[0].innerHTML.length == 1) {
+		output2.html(0);
+	} 
+	else if (output2[0].innerHTML.length > 0) {
+		let slice = output2[0].innerHTML.slice(0,output2[0].innerHTML.length - 1);
+		output2.html(slice);
 	}
 }
 
 function addNumber(number) {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output2 == 0) {
-		document.getElementById("output2").innerText = number.innerHTML;
-		return;
+	if (output2[0].innerText == 0) {
+		output2.html(number.innerHTML);
 	}
-	else if (output2 == oldValue) {
-		document.getElementById("output2").innerText = number.innerHTML;
-		document.getElementById("output1").innerText = 0;
+	else if (output2[0].innerText == oldValue) {
+		output2.html(number.innerHTML);
+		output1.html(0);
 	} 
 	else {
-		document.getElementById("output2").innerText += number.innerHTML;
-		return;
+		output2.append(number.innerHTML);
+	}
+}
+
+function addZero(number) {
+	if (output2[0].innerText == 0) {
+		output2.append(number.innerHTML);
+	}
+	else if (output2[0].innerText == oldValue) {
+		output2.html(number.innerHTML);
+		output1.html(0);
+	}
+	else if (output2[0].innerText != 0) {
+		output2.append(number.innerHTML);
 	}
 }
 
 function divide() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 == 0) {
-		document.getElementById("output1").innerText = output2 + " " + unescape('%F7') + " ";
-		document.getElementById("output2").innerText = 0;
-		return;
+	let lastPosition = output1[0].innerText.length-1;
+	if (output1[0].innerText == 0) {
+		let str = output2[0].innerText + " " + unescape('%F7');
+		output1.html(str);
+		output2.html(0);
 	} 
-	else if (typeof(output1.charAt(output1.length)) != "number" && output2 != 0) {
-		document.getElementById("output1").innerText += " " + output2 + " " + unescape('%F7') + " ";
-		document.getElementById("output2").innerText = 0;
-		return;
+	else if (output1[0].innerText[lastPosition] % 1 !== 0 && output2[0].innerText != 0) {
+		let str = " " + output2[0].innerText + " " + unescape('%F7');
+		output1.append(str);
+		output2.html(0);
+	}
+	else if (output2[0].innerText != 0 && output1[0].innerText == oldCalculation) {
+		let str = output2[0].innerText + " " + unescape('%F7');
+		output1.html(str);
+		output2.html(0);
 	}
 }
 
 function multiply() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 == 0) {
-		document.getElementById("output1").innerText = output2 + " " + unescape('%D7') + " ";
-		document.getElementById("output2").innerText = 0;
-		return;
-	} else if (typeof(output1.charAt(output1.length)) != "number" && output2 != 0) {
-		document.getElementById("output1").innerText += " " + output2 + " " + unescape('%D7') + " ";
-		document.getElementById("output2").innerText = 0;
-		return;
+	let lastPosition = output1[0].innerText.length-1;
+	if (output1[0].innerText == 0) {
+		let str = output2[0].innerText + " " + unescape('%D7');
+		output1.html(str);
+		output2.html(0);
+	} 
+	else if (output1[0].innerText[lastPosition] % 1 !== 0 && output2[0].innerText != 0) {
+		let str = " " + output2[0].innerText + " " + unescape('%D7');
+		output1.append(str);
+		output2.html(0);
+	}
+	else if (output2[0].innerText != 0 && output1[0].innerText == oldCalculation) {
+		let str = output2[0].innerText + " " + unescape('%D7');
+		output1.html(str);
+		output2.html(0);
+		console.log(3);
 	}
 }
 
 function subtraction() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 == 0) {
-		document.getElementById("output1").innerText = output2 + " - ";
-		document.getElementById("output2").innerText = 0;
-		return;
-	} else if (typeof(output1.charAt(output1.length)) != "number" && output2 != 0) {
-		document.getElementById("output1").innerText += " " + output2 + " - ";
-		document.getElementById("output2").innerText = 0;
-		return;
+	let lastPosition = output1[0].innerText.length-1;
+	if (output1[0].innerText == 0) {
+		let str = output2[0].innerText + " -" ;
+		output1.html(str);
+		output2.html(0);
+	} 
+	else if (output1[0].innerText[lastPosition] % 1 !== 0 && output2[0].innerText != 0) {
+		let str = " " + output2[0].innerText + " -";
+		output1.append(str);
+		output2.html(0);
+	}
+	else if (output2[0].innerText != 0 && output1[0].innerText == oldCalculation) {
+		let str = output2[0].innerText + " -";
+		output1.html(str);
+		output2.html(0);
+		console.log(3);
 	}
 }
 
 function summation() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 == 0) {
-		document.getElementById("output1").innerText = output2 + " + ";
-		document.getElementById("output2").innerText = 0;
-		return;
-	} else if (typeof(output1.charAt(output1.length)) != "number" && output2 != 0) {
-		document.getElementById("output1").innerText += " " + output2 + " + ";
-		document.getElementById("output2").innerText = 0;
-		return;
+	let lastPosition = output1[0].innerText.length-1;
+	if (output1[0].innerText == 0) {
+		let str = output2[0].innerText + " +" ;
+		output1.html(str);
+		output2.html(0);
+	} 
+	else if (output1[0].innerText[lastPosition] % 1 !== 0 && output2[0].innerText != 0) {
+		let str = " " + output2[0].innerText + " +";
+		output1.append(str);
+		output2.html(0);
+	}
+	else if (output2[0].innerText != 0 && output1[0].innerText == oldCalculation) {
+		let str = output2[0].innerText + " +";
+		output1.html(str);
+		output2.html(0);
+		console.log(3);
 	}
 }
 
-var oldValue = 0;
+let oldValue = 0;
+let oldCalculation = "";
 function equal() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1 == 0 && output2 == 0) {
-		document.getElementById("output1").innerText = 0;
-		document.getElementById("output2").innerText = 0;
+	if (output1[0].innerText == 0 && output2[0].innerText == 0) {
+		output1.html(0);
+		output2.html(0);
 	}
-	else if (output1 == 0 && output2 != 0) {
-		document.getElementById("output2").innerText = output2;
+	else if (output1[0].innerText == 0 && output2[0].innerText != 0) {
+		output2.html(output2[0].innerText);
 	}
-	else if (output1 != 0 && typeof(output1.charAt(output1.length)) != "number") {
-		for (let i=0; i<output1.length; i++) {
-			if(output1[i] == unescape('%F7')) {
-				output1 = output1.replace(output1.charAt(i),"/");
+	else if (output1[0].innerText != 0 && typeof(output1[0].innerText[output1.length-1]) != "number") {
+		for (let i=0; i<output1[0].innerText.length; i++) {
+			if(output1[0].innerText[i] == unescape('%F7')) {
+				output1[0].innerText = output1[0].innerText.replace(output1[0].innerText[i],"/");
 			}
-			if(output1[i] == unescape('%D7')) {
-				output1 = output1.replace(output1.charAt(i),"*");
+			if(output1[0].innerText[i] == unescape('%D7')) {
+				output1[0].innerText = output1[0].innerText.replace(output1[0].innerText[i],"*");
 			}
 		}
-		let valueStr = output1 + " " + output2;
+		let valueStr = output1[0].innerText + " " + output2[0].innerText;
 		for (let j=0; j<valueStr.length; j++) {
 			if(valueStr[j] == ",") {
-				valueStr = valueStr.replace(valueStr.charAt(j),".");
+				valueStr = valueStr.replace(valueStr[j],".");
 			}
 		}
 		// console.log(valueStr);
-		document.getElementById("output1").innerText = 0;
-		document.getElementById("output2").innerText = eval(valueStr);
-		oldValue = eval(valueStr);
-		return oldValue;
+		let calculatedValue = eval(valueStr);
+		output2.html(calculatedValue);
+		oldValue = calculatedValue;
+		printOldoldCalculation(valueStr);
+		
+	}
+}
+
+function printOldoldCalculation(str) {
+	for (let i=0; i<str.length; i++) {
+		if(str[i] == "/") {
+			str = str.replace(str[i],unescape('%F7'));
+		}
+		if(str[i] == "*") {
+			str = str.replace(str[i],unescape('%D7'));
+		}
+		output1.html(str);
+		// console.log(valueStr);
+		oldCalculation = str;
 	}
 }
 
 function addComma() {
-	document.getElementById("output2").innerText += ".";
-	return;
+	let str = "";
+	if (Number(output2[0].innerText) == output2[0].innerText && output2[0].innerText % 1 === 0) {
+		str = output2[0].innerText + ".";
+	} else {
+		str = output2[0].innerText;
+	}
+	output2.html(str);
 } 
 
 function percent() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1.charAt(output1.length) != " " && output2 != 0) {
-		document.getElementById("output2").innerText = output2/100;
-		return;
+	let lastPosition =  output1[0].innerText.length - 1;
+	if (output1[0].innerText[lastPosition] != " " && output2[0].innerText != 0) {
+		output1.html(0);
+		output2.html(output2[0].innerText/100);
 	}
 }
 
 function radic() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1.charAt(output1.length) != " " && output2 != 0) {
-		document.getElementById("output2").innerText = Math.sqrt(output2);
-		return;
+	let lastPosition =  output1[0].innerText.length - 1;
+	if (output1[0].innerText[lastPosition] != " " && output2[0].innerText != 0) {
+		let str = Math.sqrt(output2[0].innerText);
+		output2.html(str);
+		output1.html(0);
 	}
 }
 
 function permissionTwo() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1.charAt(output1.length) != " " && output2 != 0) {
-		document.getElementById("output2").innerText = output2 * output2;
-		return;
+	let lastPosition =  output1[0].innerText.length - 1;
+	if (output1[0].innerText[lastPosition] != " " && output2[0].innerText != 0) {
+		let str = output2[0].innerText * output2[0].innerText;
+		output2.html(str);
+		output1.html(0);
 	}
 }
 
 function onePartX() {
-	let output1 = document.getElementById("output1").innerText;
-	let output2 = document.getElementById("output2").innerText;
-	if (output1.charAt(output1.length) != " " && output2 != 0) {
-		document.getElementById("output2").innerText = 1 / output2;
-		return;
+	let lastPosition =  output1[0].innerText.length - 1;
+	if (output1[0].innerText[lastPosition] != " " && output2[0].innerText != 0) {
+		let str = 1 / output2[0].innerText;
+		output2.html(str);
+		output1.html(0);
 	}
 }
 
 function plusmn() {
-	let output2 = document.getElementById("output2").innerText;
-	if (output2 > 0) {
-		document.getElementById("output2").innerText = "-" + output2;
-	} else if (output2 < 0) {
-		document.getElementById("output2").innerText = Math.abs(output2);
+	if (output2[0].innerText == 0) {
+		output2.html(0);
+		output1.html(0);
 	}
-	else {
-		document.getElementById("output2").innerText = 0;
+	else if (output2[0].innerText > 0) {
+		let str = "-" + output2[0].innerText;
+		output2.html(str);
+		output1.html(0);
+	} 
+	else if (output2[0].innerText < 0) {
+		let str = Math.abs(output2[0].innerText);
+		output2.html(str);
+		output1.html(0);
 	}
 }
