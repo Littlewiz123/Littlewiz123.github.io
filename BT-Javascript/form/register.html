@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Register Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Register Form</h1>
+    
+        <form action="profile.html" onsubmit="return validateForm()" method="GET">
+            <div class="fullname">
+                <div class="lastname">
+                    <input type="text" name="lastname" placeholder="Lastname" id="lastname" />
+                    <p id="error1"></p>
+                </div>
+                
+                <div class="firstname">
+                    <input type="text" name="firstname" placeholder="Firstname" id="firstname" />
+                    <p id="error2"></p>
+                </div>
+            </div>
+
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday">
+            <p id="error3"></p>
+
+            <label id="gender-title">Gender</label><br/>
+            <div class="gender-box">
+                <span class="gender-row"><input type="radio" name="gender" value="Male" class="gender male">Male</span> <br />
+                <span class="gender-row"><input type="radio" name="gender" value="female" class="gender female">Female</span> <br />
+                <span class="gender-row"><input type="radio" name="gender" value="other" class="gender other" checked>Other</span> <br />
+            </div>
+
+            <input type="text" name="address" placeholder="Address" id="address"/>
+            <p id="error4"></p>
+
+            <input type="tel" name="phonenumber" placeholder="Phonenumber" id="phonenumber"/>
+            <p id="error5"></p>
+
+            <input type="email" name="email" placeholder="Email" id="email" />
+            <p id="error6"></p>
+    
+            <input type="password" name="password" placeholder="Password" id="password"/>
+            <p id="error7"></p>
+
+            <input type="password" placeholder="Rewrite Password" id="rewr-password"/>
+            <p id="error8"></p>
+    
+            <button>Registered</button>
+        </form>
+    </div>
+    
+    <script src="jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
