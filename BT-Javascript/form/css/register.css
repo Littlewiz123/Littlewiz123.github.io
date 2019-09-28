@@ -2,7 +2,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #6abe4e;
-    height: 1000px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
 }
 
 .container {
@@ -11,6 +13,7 @@ body {
     top: 70%;
     left: 50%;
     margin-right: -50%;
+    margin-bottom: 20px;
     transform: translate(-50%, -50%);
     padding: 38px 24px;
     width: 500px;
@@ -28,7 +31,7 @@ body {
 
 .container input {
     /* width: 300px; */
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
     display: block;
     box-sizing: border-box;
     background-color: #f2f2f2;
@@ -46,14 +49,14 @@ body {
 .container .fullname > div {
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
 }
 
 .container .fullname > div input {
-    padding: 10px 0px;
-}
-
-.container .fullname > div input::placeholder {
-    padding-left: 10px;    
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 10px;
 }
 
 .container .fullname > div:first-child {
@@ -116,6 +119,10 @@ body {
     border: none;
 }
 
-/* #error1, #error2, #error3, #error4, #error5, #error6, #error7 {
-    
-} */
+#error1, #error2, #error3, #error4, #error5, #error6, #error7, #error8 {
+    margin-top: 0;
+    color: red;
+    font-size: 19px;
+    font-style: italic;
+    padding: 0px 0px 0px 10px;
+}

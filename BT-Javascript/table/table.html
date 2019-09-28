@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Table</title>
+	<link href="css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Danh sách học viên</h1>
+		<button onclick="getAccounts()">Get Data</button>
+		<table id="myTable">
+			<tr>
+				<th onclick="sortFullname()">Họ tên</th>
+				<th onclick="sortBirthyear()">Năm sinh</th>
+				<th onclick="sortEmail()">Email</th>
+				<th onclick="sortPhonenumber()">Số điện thoại</th>
+				<th></th>
+			</tr>
+			<!-- <tr id="user2">
+				<td>Quang Hưng</td>
+				<td>2001</td>
+				<td>hung@gmail.com</td>
+				<td>123456789</td>
+				<td>
+					<div class="link">
+						<i class="fas fa-edit"></i><a href="#" id="edit">Chỉnh sửa</a>
+						<span> | </span>
+						<i class="fas fa-trash-alt"></i><a href="#" onclick="deleteUser(this)" id="delete">Xóa</a>
+					</div>
+				</td>
+			</tr> -->
+		</table>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/table.js"></script>
+</body>
+</html>
