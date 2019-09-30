@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>Table</title>
+	<title>Danh sách học viên</title>
+	<link rel="shortcut icon" type="image/png" href="img/icons/icons8-data-grid-64.png"/>
 	<link href="css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/table.css">
 </head>
+
 <body>
 	<div class="container">
 		<h1>Danh sách học viên</h1>
-		<button onclick="getAccounts()">Get Data</button>
+		<div class="header">
+			<a id="add">Tạo tài khoản</a>
+			<input type="text" id="myInput" placeholder="Tìm kiếm..">
+		</div>
 		<table id="myTable">
-			<tr>
-				<th onclick="sortFullname()">Họ tên</th>
-				<th onclick="sortBirthyear()">Năm sinh</th>
-				<th onclick="sortEmail()">Email</th>
-				<th onclick="sortPhonenumber()">Số điện thoại</th>
-				<th></th>
-			</tr>
+			<thead>
+				<tr>
+					<th id="fullname">Họ tên
+						<i class="fas fa-sort"></i>
+						<i class="fas fa-sort-up"></i>
+						<i class="fas fa-sort-down"></i>
+					</th>
+					<th id="birthyear">Năm sinh
+						<i class="fas fa-sort"></i>
+						<i class="fas fa-sort-up"></i>
+						<i class="fas fa-sort-down"></i>
+					</th>
+					<th id="email">Email
+						<i class="fas fa-sort"></i>
+						<i class="fas fa-sort-up"></i>
+						<i class="fas fa-sort-down"></i>
+					</th>
+					<th id="phonenumber">Số điện thoại
+						<i class="fas fa-sort"></i>
+						<i class="fas fa-sort-up"></i>
+						<i class="fas fa-sort-down"></i>
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
 			<!-- <tr id="user2">
 				<td>Quang Hưng</td>
 				<td>2001</td>
@@ -37,4 +64,5 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/table.js"></script>
 </body>
+
 </html>
