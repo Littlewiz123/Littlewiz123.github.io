@@ -35,7 +35,7 @@ let accounts = [
 function getAccounts() {
     $("tbody .row").remove();
     $.each(accounts, function (index, val) {
-        $('tbody').append('<tr class="row"><td>' + val.fullname + '</td><td>' + val.birthyear + '</td><td>' + val.email + '</td><td>' + val.phonenumber +
+        $('tbody').append('<tr class="row"><td class="filter">' + val.fullname + '</td><td class="filter">' + val.birthyear + '</td><td class="filter">' + val.email + '</td><td  class="filter">' + val.phonenumber +
         '</td><td><div class="link"><i class="fas fa-edit"></i><a href="#" id="edit">Chỉnh sửa</a><span> | </span><i class="fas fa-trash-alt"></i><a href="#" onclick="deleteUser(' + index + ',this)" id="delete">Xóa</a></div></td></tr>');
     });
 }
@@ -81,19 +81,23 @@ function sortByColReverse(col) {
     });
 }
 
+
+// Clicks css changing
 $('#fullname').click(function () {
     let click = $(this).data('clicks');
 
     if (click) {
         sortByCol('fullname');
-        $("#fullname .fa-sort").css("display", "none");
-        $("#fullname .fa-sort-up").css("display", "block");
-        $("#fullname .fa-sort-down").css("display", "none");
+        $("#fullname i").removeClass("fa-sort fa-sort-down").addClass("fa-sort-up");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
     }else{
         sortByColReverse('fullname');
-        $("#fullname .fa-sort").css("display", "none");
-        $("#fullname .fa-sort-up").css("display", "none");
-        $("#fullname .fa-sort-down").css("display", "block");
+        $("#fullname i").removeClass("fa-sort fa-sort-up").addClass("fa-sort-down");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
     };
     $(this).data('clicks', !click);
 })
@@ -103,14 +107,16 @@ $('#birthyear').click(function () {
 
     if (click) {
         sortByCol('birthyear');
-        $("#birthyear .fa-sort").css("display", "none");
-        $("#birthyear .fa-sort-up").css("display", "block");
-        $("#birthyear .fa-sort-down").css("display", "none");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort fa-sort-down").addClass("fa-sort-up");
     }else{
         sortByColReverse('birthyear');
-        $("#birthyear .fa-sort").css("display", "none");
-        $("#birthyear .fa-sort-up").css("display", "none");
-        $("#birthyear .fa-sort-down").css("display", "block");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort fa-sort-up").addClass("fa-sort-down");
     };
     $(this).data('clicks', !click);
 })
@@ -120,14 +126,16 @@ $('#email').click(function () {
 
     if (click) {
         sortByCol('email');
-        $("#email .fa-sort").css("display", "none");
-        $("#email .fa-sort-up").css("display", "block");
-        $("#email .fa-sort-down").css("display", "none");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort fa-sort-down").addClass("fa-sort-up");
     }else{
         sortByColReverse('email');
-        $("#email .fa-sort").css("display", "none");
-        $("#email .fa-sort-up").css("display", "none");
-        $("#email .fa-sort-down").css("display", "block");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort fa-sort-up").addClass("fa-sort-down");
     };
     $(this).data('clicks', !click);
 })
@@ -137,14 +145,16 @@ $('#phonenumber').click(function () {
 
     if (click) {
         sortByCol('phonenumber');
-        $("#phonenumber .fa-sort").css("display", "none");
-        $("#phonenumber .fa-sort-up").css("display", "block");
-        $("#phonenumber .fa-sort-down").css("display", "none");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort fa-sort-down").addClass("fa-sort-up");
     }else{
         sortByColReverse('phonenumber');
-        $("#phonenumber .fa-sort").css("display", "none");
-        $("#phonenumber .fa-sort-up").css("display", "none");
-        $("#phonenumber .fa-sort-down").css("display", "block");
+        $("#fullname i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#birthyear i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#email i").removeClass("fa-sort-up fa-sort-down").addClass("fa-sort");
+        $("#phonenumber i").removeClass("fa-sort fa-sort-up").addClass("fa-sort-down");
     };
     $(this).data('clicks', !click);
 })
@@ -173,9 +183,50 @@ $('#phonenumber').click(function () {
 
 $(document).ready(function () {
     $('#myInput').on('keyup', function () {
-        let value = $(this).val().toLowerCase();
-        $('#myTable tbody tr').filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        })
+        // let value = $(this).val().toLowerCase();
+        // $('#myTable tbody tr').filter(function () {
+        //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        // })
+
+        let  rows = $('#myTable').find("tbody tr");
+
+        if (this.value.length > 0) {
+            //First hide all an remove class used to identify matched rows
+          rows.removeClass("match").hide().filter(function() {
+              var match = false;
+              $(this).find("td.filter").each(function() {
+              var indexOf = $(this).text().toLowerCase().indexOf($("#myInput").val().toLowerCase());
+              //Check with indexOf if this row cell include search string
+              if(indexOf !== -1) {
+                      match = true;
+                 return;
+              }	
+            });
+              return match;
+          }).addClass("match").show();
+        } else {
+            //If filter not provided show all 
+          rows.removeClass("match").show().find("span").contents().unwrap();
+        }
+        
+        highlight(this.value);
     })
 })
+
+function highlight(string) {
+    $("#myTable").find("tbody tr.match td.filter").each(function() {
+    
+        if($(this).text().indexOf(string) === -1)
+          return;
+    
+      var matchStartIndex = $(this).text().toLowerCase().indexOf(string.toLowerCase());
+      var matchEndIndex = matchStartIndex + string.length - 1;
+  
+      var beforeMatch = $(this).text().slice(0, matchStartIndex);
+      var matchText = $(this).text().slice(matchStartIndex, matchEndIndex + 1);
+      var afterMatch = $(this).text().slice(matchEndIndex + 1);
+  
+      //Here set selected text to e.g. bold style
+      $(this).html(beforeMatch + "<span style='color: yellow;'>" + matchText + "</span>" + afterMatch);
+    });
+  };

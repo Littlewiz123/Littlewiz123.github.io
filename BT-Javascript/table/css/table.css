@@ -116,10 +116,10 @@ body {
 
 .fa-sort-up {
     float: right;
-    display: none;
+    /* display: none; */
 }
 
 .fa-sort-down {
     float: right;
-    display: none;
+    /* display: none; */
 }
