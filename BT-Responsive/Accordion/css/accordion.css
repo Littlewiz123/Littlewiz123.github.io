@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align:  center;
+}
+
+.box {
+    border: 2px solid darkgray;
+    margin: 0px 30px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.box > a {
+    background-color: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    display: block;
+    box-sizing: border-box;
+}
+
+.box > div {
+    box-sizing: border-box;
+    display: none;
+    padding: 10px;
+}
+
+.box > div img {
+    max-width: 50%;
+    margin: auto;
+    display: block;
+}
